@@ -1,0 +1,90 @@
+-------------------------------------------------------------------------------------------------------------------------------------
+                                                        Minutes   
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+ Iteration 1 
+-------------------------------------------------------------------------------------------------------------------------------------
+    Date     |   Activity   |  Comments
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  24/09/2021 |  Discussion  | Went through assignment spec together in the lab.
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  27/09/2021 |  Discussion  | - Went through auth functions and tests as a group. Merged it to master
+             |              | - Fixed and updated the issues board
+             |              | - Discussed roles in upcoming channel and channels implementations and test
+             |              | - Made sure everyone is on track and has the updated code
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  01/10/2021 |  Coding      | - Checked on progress of channels and channel functions 
+  02/10/2021 |  Coding      | - Bug fixing and pair coding session 
+-------------------------------------------------------------------------------------------------------------------------------------
+ Iteration 2 
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+    Date     |   Activity   |  Comments
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  14/10/2021 |  Discussion  | Current Discussion
+             |              | - General meeting about iteration 2 functions
+             |              | - Discussed plan to split iteration two into two parts, phase 1 and phase 2.
+             |              |   With Phase 1 containing plans to wrap the old functions with inclusion of new channel and message 
+             |              |   Phase 2 being the new user, dms and admins functions
+             |              | - Brief run down of new specs.
+             |              | Future plans
+             |              | - Once all lecture material of relevant topics come out, allocation of phase 1 functions will begin
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  15/10/2021 |  Discussion  | Current Discussion
+             |              | - General meeting about marks regarding iteration 1
+             |              | - Discussed fixing all of iteration 1 before being iteration 2 phase 1
+             |              | - Allocated work to each member for phase 1  
+             |              | - Discussed using Jira instead of Git for issue board and task tracking 
+             |              | Future plans
+             |              | - Get all iteration 1 fixed and have phase1 done by the next leaderboard
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+ 19/10/2021  |  Discussion  | Current Discussion
+             |              | - General meeting about phase 1 progress
+             |              | - Discussed everyones progress on wrapping their functions and testing them
+             |              | Future plans
+             |              | - Get phase1 done, and being phase 2 
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+ 21/10/2021  |  Discussion  | Current Discussion
+             |              | - General meeting about phase 2
+             |              | - Discussed the completion and coverage on phase 1
+             |              | - Allocated work for each member in phase 2
+             |              | Future plans
+             |              | - Get phase2 done by the last leaderboard check
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+23/10/2021   |  Discussion  | Current Discussion
+             |              | - General meeting about completion of phase 2 and current leaderboard standing
+             |              | - Discussed errors that are still present and functions that need to be fully implementated
+             |              | - Discussed styling format and docstring everyone will follow
+             |              | Future plans
+             |              | - Finialise iteration 2 and complete styling for due date
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+ Iteration 3 
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+    Date     |   Activity   |  Comments
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  29/10/2021 |  Discussion  | Current Discussion
+             |              | - General meeting about iteration 2 functions fixing 
+             |              | - Discussed plan to fix the current issues of iter2
+             |              |   With all the functions that had issues listed on our discussion forum 
+             |              | Future plans
+             |              | - Once all the iter2 functions are fixed then we can get started looking at iter3
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  5/11/2021  |  Discussion  | Current Discussion
+             |              | - General meeting about iteration 3 functions
+             |              | - Discussed plans on allocating work for iteration 3
+             |              | - Went through the spec as a group to understand the issues  
+             |              | - Added all iteration 3 work on Jira
+             |              | Future plans
+             |              | - Get the iteration 3 done at each member's own pace due to upcoming assessments
+-------------+--------------+--------------------------------------------------------------------------------------------------------
+  12/11/2021 |  Discussion  | Current Discussion
+             |              | - General meeting about iteration 3 functions progress
+             |              | - We had a standup for each member to see their progress on their allocated work
+             |              | - Discussed the issues that we still need to finish 
+             |              | - Progress was fine but could be much better 
+             |              |   so team agreed to make sure everyone knew what they had to do in the weekends
+             |              | Future plans
+             |              | - Get the iteration 3 done before sunday so we can deploy and do frontend testing
+-------------+--------------+--------------------------------------------------------------------------------------------------------
