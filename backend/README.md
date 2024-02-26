@@ -1,16 +1,16 @@
-# Streams
+# Streams Backend
 
 ### Running the server
 
-To run the server you should always use the command from the root directory of your project:
+To run the server you should always use the command from the root directory of the project:
 
 ```bash
 python3 -m src.server
 ```
 
-This will start the server on the port in the src/config.py file. All your tests should import the port number from this file.
+This will start the server on the port in the src/config.py file. All tests should import the port number from this file.
 
-If you get an OSError stating that the address is already in use, you can change the port in the config file to any number from 1024 to 49151. Is it likely that another application may be using your original port number.
+If you get an OSError stating that the address is already in use, you can change the port in the config file to any number from 1024 to 49151. Is it likely that another application may be using the original port number.
 
 If you get any errors relating to `flask_cors`, ensure you have installed all the necessary Python libraries.
 
@@ -817,7 +817,7 @@ A common question asked throughout the project is usually "How can I test this?"
 
 The behaviour in which channel_messages returns data is called **pagination**. It's a commonly used method when it comes to getting theoretially unbounded amounts of data from a server to display on a page in chunks. Most of the timelines you know and love - Facebook, Instagram, LinkedIn - do this.
 
-For example, in iteration 1, if we imagine a user with `auth_user_id` "12345" is trying to read messages from channel with ID 6, and this channel has 124 messages in it, 3 calls from the client to the server would be made. These calls, and their corresponding return values would be:
+For example, if we imagine a user with `auth_user_id` "12345" is trying to read messages from channel with ID 6, and this channel has 124 messages in it, 3 calls from the client to the server would be made. These calls, and their corresponding return values would be:
  * `channel_messages("12345", 6, 0) => { [messages], 0, 50 }`
  * `channel_messages("12345", 6, 50) => { [messages], 50, 100 }`
  * `channel_messages("12345", 6, 100) => { [messages], 100, -1 }`
@@ -847,15 +847,15 @@ Many of these functions (nearly all of them) need to be called from the perspect
 1) Which user is calling it
 2) That the person who claims they are that user, is actually that user
 
-We could solve this trivially by storing the user ID of the logged in user on the frontend, and every time the frontend (from Andrea and Andrew) calls your background, they just sent a user ID. This solves our first problem (1), but doesn't solve our second problem! Because someone could just "hack" the frontend and change their user id and then log themselves in as someone else.
+We could solve this trivially by storing the user ID of the logged in user on the frontend, and every time the frontend calls your background, they just sent a user ID. This solves our first problem (1), but doesn't solve our second problem! Because someone could just "hack" the frontend and change their user id and then log themselves in as someone else.
 
-To solve this when a user logs in or registers the backend should return a "token" (an authorisation hash) that the frontend will store and pass into most of your functions in future. When these "authorised" functions are called, those tokens returned from register/login will be passed into those functions, and from there you can check if a token or auth_user_id is valid, and determine the user ID.
+To solve this when a user logs in or registers the backend should return a "token" (an authorisation hash) that the frontend will store and pass into most of the functions in future. When these "authorised" functions are called, those tokens returned from register/login will be passed into those functions, and from there you can check if a token or auth_user_id is valid, and determine the user ID.
 
 Passwords must be stored in an encrypted form, and tokens must use JWTs (or similar).
 
 ### 9. Working with the frontend
 
-The frontend is located in a separate directory. If you run the frontend at the same time as your flask server is running on the backend, then you can power the frontend via your backend.
+The frontend is located in a separate directory. If you run the frontend at the same time as the flask server is running on the backend, then you can power the frontend via the backend.
 
 For errors to be appropriately raised on the frontend, they must be raised by the following:
 
@@ -864,17 +864,17 @@ if True: # condition here
     raise InputError(description='Description of problem')
 ```
 
-The quality of the descriptions will not be assessed, but you must modify your errors to this format.
+The quality of the descriptions will not be assessed, but you must modify the errors to this format.
 
 The types in error.py have been modified appropriately for you.
 
 ### 10. User Sessions
 
-Iteration 2 introduces the concept of `sessions`. With sessions, when a user logs in or registers, they receive a "token" (think of it like a ticket to a concert). These tokens are stored on the web browser, and nearly every time that user wants to make a request to the server, they will pass this "token" as part of this request. In this way, the server is able to take this token, look at it (like checking a ticket), and determine whether it's really you or not.
+When a user logs in or registers, they receive a "token" (think of it like a ticket to a concert) for a session. These tokens are stored on the web browser, and nearly every time that user wants to make a request to the server, they will pass this "token" as part of this request. In this way, the server is able to take this token, look at it (like checking a ticket), and determine whether it's really you or not.
 
-This notion of a session is explored in the authentication (Hashing) & authorisation (JWT), and is an expectation that it is implemented in iteration 2 and beyond.
+This notion of a session is explored in the authentication (Hashing) & authorisation (JWT).
 
-For iteration 2 and beyond, we also expect you to handle multiple concurrent sessions. I.E. One user can log in on two different browser tabs, click logout on tab 1, but still functionally use the website on tab 2.
+We also expect you to handle multiple concurrent sessions. I.E. One user can log in on two different browser tabs, click logout on tab 1, but still functionally use the website on tab 2.
 
 ### 11. Tagging users
 
@@ -884,7 +884,7 @@ Tagging should also occur when messages are edited to contain tags and when the 
 
 ### 12. Analytics
 
-Andrea and Andrew have implemented analytics pages for users and for the Streams workspace on the frontend and need data. Your task is to add to your backend functionality that keeps track of these metrics:
+We have implemented analytics pages for users and for the Streams workspace on the frontend and need data. Your task is to add to your backend functionality that keeps track of these metrics:
 
 For users:
   * The number of channels the user is a part of
@@ -936,7 +936,7 @@ Standups can be started on the frontend by typing "/standup X", where X is the n
 
 ### 15. profile_img_url & image uploads
 
-For outputs with data pertaining to a user, a profile_img_url is present. When images are uploaded for a user profile, after processing them you should store them on the server such that your server now locally has a copy of the cropped image of the original file linked. Then, the profile_img_url should be a URL to the server, such as http://localhost:5001/imgurl/adfnajnerkn23k4234.jpg (a unique url you generate).
+For outputs with data pertaining to a user, a profile_img_url is present. When images are uploaded for a user profile, after processing them you should store them on the server such that the server now locally has a copy of the cropped image of the original file linked. Then, the profile_img_url should be a URL to the server, such as http://localhost:5001/imgurl/adfnajnerkn23k4234.jpg (a unique url you generate).
 
 For any given user, if they have yet to upload an image, there should be a site-wide default image used.
 
