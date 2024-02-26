@@ -1,122 +1,6 @@
-# COMP1531 Major Project
+# Streams
 
-**✨ Teamwork makes the [UNSW] Streams work 🌈**
-
-## Contents
-
-  1.  Aims
-  2.  Overview
-  3.  Iteration 1: Basic functionality and tests
-  4.  Iteration 2: Building a web server
-  5.  Iteration 3: Completing the lifecycle
-  6.  Interface specifications
-  7.  Due Dates and Weightings
-  8.  Other Expectations
-  9.  Automarking
-  10. Plagiarism
-
-
-## 0. Change log:
-* Clarified `message/share` and edited a rogue `auth_user_id` to say token instead
-
-## 1. Aims:
-
-* To provide students with hands on experience testing, developing, and maintaining a backend server in Python.
-* To develop students' problem solving skills in relation to the software development lifecycle.
-* Learn to work effectively as part of a team by managing your project, planning, and allocation of responsibilities among the members of your team.
-* Gain experience in collaborating through the use of a source control and other associated modern team-based tools.
-* Apply appropriate design practices and methodologies in the development of their solution
-* Develop an appreciation for product design and an intuition of how a typical customer will use a product.
-
-## 2. Overview
-
-<b>Please watch our introduction video here</b>:
- * [Part 1: About the project](https://youtu.be/iARiNetEZV8)
- * [Part 2: Getting started](https://youtu.be/_nlrxuYTdIc)
-
-To manage the transition from trimesters to hexamesters in 2021, UNSW has established a new focus on building an in-house digital collaboration and communication tool for groups and teams to support the high intensity learning environment.
-
-Rather than re-invent the wheel, UNSW has decided that it finds the functionality of **<a href="https://www.microsoft.com/en-au/microsoft-teams/group-chat-software">Microsoft Teams</a>** to be nearly exactly what it needs. For this reason, UNSW has contracted out Penguin Pty Ltd (a small software business run by Hayden) to build the new product. In UNSW's attempt to try and add a lighter note to the generally fatigued and cynical student body, they have named their UNSW-based product **UNSW Streams** (or just **Streams** for short). **UNSW Streams** is the communication tool that allows you to share, communication, and collaborate to (attempt to) make streams a reality.
-
-Penguin Pty Ltd has sub-contracted two software firms:
-
-* BlueBottle Pty Ltd (two software developers, Andrea and Andrew, who will build the initial web-based GUI)
-* YourTeam Pty Ltd (a team of talented misfits completing COMP1531 in 21T3), who will build the backend Python server
-
-In summary, UNSW contracts Penguin Pty Ltd, who sub contracts:
-
-* BlueBottle (Andrea and Andrew) for frontend work
-* YourTeam (you and others) for backend work
-
-Penguin Pty Ltd met with Andrea and Andrew (the frontend development team) 2 weeks ago to brief them on this project. While you are still trying to get up to speed on the requirements of this project, Andrea and Andrew understand the requirements of the project very well.
-
-Because of this they have already specified a **common interface** for the frontend and backend to operate on. This allows both parties to go off and do their own development and testing under the assumption that both parties will comply with the common interface. This is the interface **you are required to use**.
-
-The specific capabilities that need to be built for this project are described in the interface at the bottom. This is clearly a lot of features, but not all of them are to be implemented at once.
-
-## 3. Iteration 1: Basic Functionality and Tests
-
-Completed
-
-## 4. Iteration 2: Building a Web Server
-
-Completed
-
-## 5. Iteration 3: Completing the Lifecycle
-
-Iteration 3 builds off all of the work you've completed in iteration 2.
-
-If you haven't completed the implementation for iteration 2, you must complete them as part of this iteration. The automarking for iteration 3 will test on a fully completed interface.
-
-### 5.1. Task
-
-In this iteration, you are expected to:
-
-1. Make adjustments to your existing code and tests as per any feedback given by your tutor for iteration 2. In particular, you should take time to ensure that your code is well-styled and complies with pythonic programming practices and software and test design principles discussed in lectures.
-
-2. Implement and test the HTTP Flask server according to the entire interface provided in the specification, including features that were added in iteration 3.
-
-    * Part of this section will be automarked.
-
-    * It is required that your data is persistent just like iteration 2.
-
-    * Pylint is assessed identical to that of iteration 2.
-
-    * *Branch* coverage for all .py files that aren't tests is assessed identical to that of iteration 2.
-
-    * You can structure your tests inside `/tests` however you choose, as long as they are appended with `_test.py`. For this iteration we will only be testing your HTTP layer of tests. 
-
-    * A frontend has been built by Andrea and Andrew that you can use in this iteration, and use your backend to power it (note: an incomplete backend will mean the frontend cannot work). You can, if you wish, make changes to the frontend code, but it is not required for this course. As part of this iteration it's required that your backend code can correctly power the frontend.
-
-    * You must comply with instructions laid out in `5.3`
-
-3. Continue demonstrating effective project management and effective git usage.
-
-    * Part of this section may be automarked.
-
-    * You will be heavily marked for your use of thoughtful project management and use of git effectively. The degree to which your team works effectively will also be assessed.
-
-    * As for iteration 1, all task tracking and management will need to be done via the GitLab Taskboard.
-
-    * As for iteration 1, regular group meetings must be documented with meeting minutes which should be stored at a timestamped location in your repo (e.g. uploading a word doc/pdf or writing in the GitLab repo wiki after each meeting).
-
-    * As for iteration 1, you must be able to demonstrate evidence of regular standups.
-
-    * You are required to regularly and thoughtfully make merge requests for the smallest reasonable units, and merge them into `master`.
-
-4. Document the planning of new features.
-
-    * You are required to scope out 2-3 problems to solve for future iterations of Streams. You aren't required to build/code them, but you are required to go through SDLC steps of requirements analysis, conceptual modelling, and design.
-
-    * Full detail of this can be found in `5.6`.
-
-5. Deploy your backend to the cloud.
-
-    * You are required to deploy your backend a cloud-provider so that it can be accessed from anywhere in the world.
-
-    * Full detail of this can be found in `5.7`
-
-### 5.2. Running the server
+### Running the server
 
 To run the server you should always use the command from the root directory of your project:
 
@@ -126,247 +10,15 @@ python3 -m src.server
 
 This will start the server on the port in the src/config.py file. All your tests should import the port number from this file.
 
-If you get an OSError stating that the address is already in use, you can change the port in the config file to any number from 1024 to 49151. Is it likely that another student may be using your original port number.
+If you get an OSError stating that the address is already in use, you can change the port in the config file to any number from 1024 to 49151. Is it likely that another application may be using your original port number.
 
-If you get any errors relating to `flask_cors`, ensure you have installed all the necessary Python libraries for this course (the list of libraries was updated for this iteration). You can do this with:
-
-```bash
-pip3 install $(curl https://www.cse.unsw.edu.au/~cs1531/21T3/requirements.txt)
-```
+If you get any errors relating to `flask_cors`, ensure you have installed all the necessary Python libraries.
 
 Please note: For routes such as `standup/start` and `message/sendlater` you are not required to account for situations whereby the server process crashes or restarts whilst waiting. If the server ever restarts while these active "sessions" are ongoing, you can assume they are no longer happening after restart.
 
-### 5.3. How to implement and test features
+## Interface specifications
 
-Continue working this project by making distinct "features". Each feature should add some meaningful functionality to the project, but still be as small as possible. You should aim to size features as the smallest amount of functionality that adds value without making the project more unstable. For each feature you should:
-
-1. Create a new branch.
-2. Write tests for that feature and commit them to the branch. These will fail as you have not yet implemented the feature.
-3. Implement that feature.
-4. Make any changes to the tests such that they pass with the given implementation. You should not have to do a lot here. If you find that you are, you're not spending enough time on your tests.
-5. Create a merge request for the branch.
-6. Get someone in your team who **did not** work on the feature to review the merge request. When reviewing, **not only should you ensure the new feature has tests that pass, but you should also check that the coverage percentage has not been significantly reduced.**
-7. Fix any issues identified in the review.
-8. Merge the merge request into master.
-
-For this project, a feature is typically sized somewhere between a single function, and a whole file of functions (e.g. `auth.py`). It is up to you and your team to decide what each feature is.
-
-There is no requirement that each feature be implemented by only one person. In fact, we encourage you to work together closely on features, especially to help those who may still be coming to grips with Python.
-
-Please pay careful attention to the following:
-
-Your tests, keep in mind the following:
-* We want to see **evidence that you wrote your tests before writing the implementation**. As noted above, the commits containing your initial tests should appear *before* your implementation for every feature branch. If we don't see this evidence, we will assume you did not write your tests first and your mark will be reduced.
-* You should have black-box tests for all tests required (i.e. testing each function/endpoint). However, you are also welcome to write whitebox unit tests in this iteration if you see that as important.
-* Merging in merge requests with failing pipelines is **very bad practice**. Not only does this interfere with your teams ability to work on different features at the same time, and thus slow down development, it is something you will be penalised for in marking.
-* Similarly, merging in branches with untested features is also **very bad practice**. We will assume, and you should too, that any code without tests does not work.
-* Pushing directly to `master` is not possible for this repo. The only way to get code into master is via a merge request. If you discover you have a bug in `master` that got through testing, create a bugfix branch and merge that in via a merge request.
-
-### 5.4. Test coverage
-
-To get the coverage of your tests locally, you will need to have two terminals open. Run these commands from the root directory of your project.
-
-In the first terminal, run
-```bash
-coverage run -m src.server
-```
-
-In the second terminal, run pytest as usual
-```bash
-pytest
-```
-
-Back in the first terminal, stop the server with Ctrl+C or Command-C, and run `coverage report` or `coverage html` to generate a coverage report or HTML report respectively.
-
-### 5.5. Dryrun
-
-There is no new dryrun for iteration 3, however you can still run the dryrun for iteration 2. It consists of 4 tests, one each for your implementation of `clear/v1`, `auth/register/v2`, `channels/create/v2`, and `channels/list/v2`. These only check whether your server wrapper functions accept requests correctly, the format of your return types and simple expected behaviour, so do not rely on these as an indicator for the correctness of your implementation or tests.
-
-To run the dryrun, you should be in the root directory of your project (e.g. `/project-backend`) and use the command:
-
-```bash
-1531 dryrun 2
-```
-
-### 5.6. Planning for the next problems to solve
-
-Software development is an iterative process - we're never truly finished. As we complete the development and testing of one feature, we're often then trying to understand the requirements and needs of our users to design the next set of features in our product.
-
-For iteration 3 you are going to produce a short report in `planning.pdf` and place it in the repository. The contents of this report will be a simplified approach to understanding user problems, developing requirements, and doing some early designs.
-
-N.B. If you don't know how to produce a PDF, you can easily make one in Google docs and then export to PDF.
-
-We have opted not to provide you with a sample structure - because we're not interested in any rigid structure. Structure it however you best see fit, as we will be marking content.
-
-#### [Requirements] Elicitation
-
-Find 2-3 people to interview as target users. Target users are people who currently use a tool like Streams, or intend to. Collect their name and email address.
-
-Develop a series of questions to ask these target users to understand what *problems* they might have with teamwork-driven communication tools that are currently unsolved by Streams. Give these questions to your target users and record their answers.
-
-Once you have done this, think about how you would solve the following problem and write down a brief description of a proposed solution.
-
-#### [Requirements] Analysis & Specification - Use Cases
-
-Once you've elicited this information, it's time to consolidate it.
-
-Take the responses from the elicitation and express these requirements as **user stories**. Document these user stories. For each user story, add user acceptance criteria as notes so that you have a clear definition of when a story has been completed.
-
-Once documented, generate at least one use case that attempts to describe a solution that satifies some of or all the requirements elicited. You can generate a visual diagram or a more written-recipe style, as per lectures.
-
-#### [Requirements] Validation
-
-With your completed use case work, reach out to the 2-3 people you interviewed originally and inquire as to the extent to which these use cases would adequately describe the problem they're trying to solve. Ask them for a comment on this, and record their comments in the PDF.
-
-#### [Design] Interface Design
-
-Now that we've established our _problem_ (described as requirements), it's time to think about our _solution_ in terms of what capabilities would be necessary. You will specify these capabilities as HTTP endpoints, similar to what is described in `6.2`. There is no minimum or maximum of what is needed - it will depend on what problem you're solving.
-
-#### [Design] Conceptual Modelling (State)
-
-Now that you have a sense of the problem to solve, and what capabilities you will need to provide to solve it, add at least one state diagram to your PDF to show how the state of the application would change based on user actions. The aim of this diagram is how to a developer understand the different states the user or application.
-
-### 5.7. Deployment
-
-You and your team are to host your backend on a cloud-provider. Once your backend has been deployed to the cloud, you will be able to point the frontend to use the new URL of where the backend is deployed and use your backend from anywhere in the world. In summary:
- * You get your server (that you wrote) deployed to the internet at a public URL
- * You still run your frontend locally (which can connect to that server)
-
-Depending on how you and your team have structured your project, your current method of using data may have to be rethought. Deploying to cloud and developing locally require two different mindsets and you and your team may find that you held some assumptions that are valid when developing locally but do not hold when being hosted on the cloud.
-
-We have written a guide on how to deploy to a free cloud provider <a href="https://www.alwaysdata.com/en/">AlwaysData</a>. [Click here to view the guide](docs/DEPLOY.md).
-
-### 5.8. Marking Criteria
-
-<table>
-  <tr>
-    <th>Section</th>
-    <th>Weighting</th>
-    <th>Criteria</th>
-  </tr>
-  <tr>
-    <td>Automarking (Testing & Implementation)</td>
-    <td>55%</td>
-    <td><ul>
-      <li>Correct implementation of specified functions</li>
-      <li>Correctly written tests based on the specification requirements</li>
-      <li>Code coverage (99% coverage gives full marks for the coverage component)</li>
-      <li>Correctly linted code</li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td>Code Quality</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Demonstrated an understanding of good test <b>coverage</b></li>
-      <li>Demonstrated an understanding of the importance of <b>clarity</b> on the communication test and code purposes</li>
-      <li>Demonstrated an understanding of thoughtful test <b>design</b></li>
-      <li>Appropriate use of Python data structures (lists, dictionaries, etc.)</li>
-      <li>Appropriate style as described in section 8.4</li>
-      <li>Appropriate application of good software design and Pythonic patterns</li>
-      <li>Implementation of persistent state</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>Feature demonstrations</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Successful implementation of user/profile/uploadphoto and auth/passwordreset</li>
-      <li>Successful deployment to AlwaysData</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>Git & Project Management</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Meaningful and informative git commit names being used</li>
-      <li>At least 12 merge requests into master made</li>
-      <li>A generally equal contribution between team members</li>
-      <li>Clear evidence of reflection on group's performance and state of the team</li>
-      <li>Effective use of course-provided MS Teams for communicating, demonstrating an ability to communicate and manage effectivelly digitally</li>
-      <li>Use of issue board on GitLab to track and manage tasks</li>
-      <li>Effective use of agile methods such as standups</li>
-      <li>Minutes/notes taken from group meetings (and stored in a logical place in the repo)</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>Requirements & Design for future work</td>
-    <td>15%</td>
-    <td><ul>
-      <li>Requirements elicited from potential users, recorded as user stories</li>
-      <li>User journey justified and expressed as use case(s)</li>
-      <li>Interface proposed as a potential solution to provide capabilities</li>
-      <li>State diagram drawn to demonstrate how application responds to actions</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>(Bonus Marks) Extra Features</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Up to 10% extra marks can be gained through additions of "extra feature(s)".</li>
-      <li>Marks will be awarded based on 1) Originality, 2) Technical or creative achievement, 3) Lack of bugs associated with it, 4) Size/scale of the addition.</li>
-      <li>Your tutor is not required to provide any assistance with this, as it's intended for more advanced students once they complete all other criteria at a high level of quality.</li>
-      <li>A brief explanation of your additions must be written in a file <code>extra.md</code> that is added to your repo.</li>
-      <li>Section 5.10 provides some examples of extra features you may want to implement, if you need some suggestions.</li>
-      <li>To give a rough indication of how much time should be spent on extra features, a group scoring in the top 10% should spend ~40 hours collectively on this section</li>
-    </ul>
-  </td>
-  </tr>
-</table>
-
-The formula used for automarking in this iteration is:
-
-`Automark = 95*(t * i * min(c + 0.01, 1)^3) + 5*p`
-
-(Non-pylint mark component equals `t` multiplied by `i` multiplied by the minimum of `c + 0.01` and 1 to the power of three). This formula produces a value between 0 and 1.
-
-Where:
- * `t` is the mark between 0-1 you receive for your tests running against your code (100% = your implementation passes all of your tests)
- * `i` is the mark between 0-1 you receive for our course tests (hidden) running against your code (100% = your implementation passes all of our tests)
- * `c` is the score between 0-1 achieved by running pycoverage on your entire codebase. Note that 99% coverage is enough to give you full marks for this part.
- * `p` is the score between 0-1 achieved by running pylint against your code with the provided configuration
-
-
-### 5.9. Submission
-
-This iteration due date and demonstration week is described in section 7. You will demonstrate this submission in line with the information provided in section 7.
-
-### 5.10. Extra Features
-
-Your tutor is not required to provide any assistance with this, as it's intended for more advanced students once they complete all other criteria at a high level of quality.
-A brief explanation of your additions must be written in a file <code>extra.md</code> that is added to your repo.
-
-Here are some suggestions for extra features.
-
-1. Frontend - **Hangman on Frontend**
-
-    After a game of Hangman has been started any user in the channel can type /guess X where X is an individual letter. If that letter is contained in the word or phrase they're trying to guess, the app should indicate where it occurs. If it does not occur, more of the hangman is drawn. There is a lot of flexibility in how you achieve this. It can be done only by modifying the backend and relying on messages to communicate the state of the game (e.g. after making a guess, the "Hangman" posts a message with a drawing of the hangman in ASCII/emoji art). Alternatively you can modify the frontend, if you want to experiment with fancier graphics.
-
-    The app should use words and phrases from an external source, not just a small handful hardcoded into the app. One suitable source is /usr/share/dict/words available on Unix-based systems. Alternatively, the Python wikiquote module is available via pip and can be used to retrieve quotes and phrases from Wikiquote.
-
-    Note that this part of the specification is deliberately open-ended. You're free to make your own creative choices in exactly how the game should work, as long as the end result is something that could be fairly described as Hangman.
-
-2. Frontend - **Dark Mode** - Modify the frontend code so that on the flip of a switch in the navbar, the website is now in "dark mode" with a colour schema of your choosing.
-
-3. Frontend - **LaTEX / Markdown Support** - Modify the frontend code so that messages in channels and dms can be rendered in LaTEX and/or Markdown.
-
-4. **Databases** - Implementing persistence using a form of database. This can be done in Python using the `sqlite3` or `peewee` or `psycopg2` modules to run SQL queries on a local .db file or a remote db.
-
-5. **Object-Oriented Programming** - Refactor your code so data is stored in objects instead of dictionaries.
-
-6. **Type Checking** - Use the `typing` module to statically type-check your functions.
-
-7. **New Features** - Implement one or more of the features you have elicited in your Requirements & Design.
-
-## 6. Interface specifications
-
-These interface specifications come from Andrea and Andrew, who are building the frontend to the requirements set out below.
-
-### 6.1. Input/Output types
+### 1. Input/Output types
 
 <table>
   <tr>
@@ -501,7 +153,7 @@ These interface specifications come from Andrea and Andrew, who are building the
   </tr>
 </table>
 
-### 6.2. Interface
+### 2. Interface
 
 
 <table>
@@ -1128,26 +780,26 @@ These interface specifications come from Andrea and Andrew, who are building the
     </td>
   </tr>
   <tr>
-    <td><code>user/stats/v1</code><br /><br />Fetches the required statistics about this user's use of UNSW Streams.</td>
+    <td><code>user/stats/v1</code><br /><br />Fetches the required statistics about this user's use of Streams.</td>
     <td style="font-weight: bold; color: green;">GET</td>
     <td><b>Parameters:</b><br /><code>{ token }</code><br /><br /><b>Return Type:</b><br /><code>{ user_stats }</code></td>
     <td>N/A</td>
   </tr>
   <tr>
-    <td><code>users/stats/v1</code><br /><br />Fetches the required statistics about the use of UNSW Streams.</td>
+    <td><code>users/stats/v1</code><br /><br />Fetches the required statistics about the use of Streams.</td>
     <td style="font-weight: bold; color: green;">GET</td>
     <td><b>Parameters:</b><br /><code>{ token }</code><br /><br /><b>Return Type:</b><br /><code>{ workspace_stats }</code></td>
     <td>N/A</td>
   </tr>
 </table>
 
-### 6.3. Errors for all functions
+### 3. Errors for all functions
 
 Either an `InputError` or `AccessError` is thrown when something goes wrong. All of these cases are listed in the **Interface** table. If input implies that both errors should be thrown, throw an `AccessError`.
 
-One exception is that, even though it's not listed in the table, for all functions except `auth/register`, `auth/login`, `auth/passwordreset/request` (iteration 3) and `auth/passwordreset/reset` (iteration 3), an `AccessError` is thrown when the token passed in is invalid.
+One exception is that, even though it's not listed in the table, for all functions except `auth/register`, `auth/login`, `auth/passwordreset/request` and `auth/passwordreset/reset`, an `AccessError` is thrown when the token passed in is invalid.
 
-### 6.4. Valid email format
+### 4. Valid email format
 
 A valid email should match the following regular expression:
 
@@ -1157,11 +809,11 @@ A valid email should match the following regular expression:
 
 The Python `re` (regular expression) module allows you to determine whether a string matches a regular expression. You do not need to understand regular expressions to effectively utilise the `re` module to check if the email is correct. Check [this link](https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/) if you need more help.
 
-### 6.5. Testing
+### 5. Testing
 
 A common question asked throughout the project is usually "How can I test this?" or "Can I test this?" In any situation, most things can be tested thoroughly. However, some things can only be tested sparsely, and in some other rare occasions, some things can't be tested at all. A challenge of this project is for you to use your discretion to figure out what to test, and how much to test.
 
-### 6.6. Pagination
+### 6. Pagination
 
 The behaviour in which channel_messages returns data is called **pagination**. It's a commonly used method when it comes to getting theoretially unbounded amounts of data from a server to display on a page in chunks. Most of the timelines you know and love - Facebook, Instagram, LinkedIn - do this.
 
@@ -1172,7 +824,7 @@ For example, in iteration 1, if we imagine a user with `auth_user_id` "12345" is
 
 Pagination should also apply to messages in DMs.
 
-### 6.7. Permissions
+### 7. Permissions
 
  * Members in a channel/DM have one of two channel/DM permissions
    1) Owner of the channel/DM
@@ -1189,7 +841,7 @@ A user's primary permissions are their global permissions (except in DMs). Then 
 * A member of Streams is an owner in channels they are owners of
 
 
-### 6.8. Token
+### 8. Token
 
 Many of these functions (nearly all of them) need to be called from the perspective of a user who is logged in already. When calling these "authorised" functions, we need to know:
 1) Which user is calling it
@@ -1201,21 +853,9 @@ To solve this when a user logs in or registers the backend should return a "toke
 
 Passwords must be stored in an encrypted form, and tokens must use JWTs (or similar).
 
-### 6.9. Working with the frontend
+### 9. Working with the frontend
 
-There is a SINGLE repository available for all students at https://gitlab.cse.unsw.edu.au/COMP1531/21T3/project-frontend. You can clone this frontend locally. If you'd like to modify the frontend repo (i.e. teach yourself some frontend), please FORK the repository.
-
-If you run the frontend at the same time as your flask server is running on the backend, then you can power the frontend via your backend.
-
-Please note: The frontend may have very slight inconsistencies with expected behaviour outlined in the specification. Our automarkers will be running against your compliance to the specification. The frontend is there for further testing and demonstration.
-
-#### 6.9.1. Example implementation
-
-A working example of the frontend can be used at http://streams-unsw.herokuapp.com/. This is not a gospel implementation that dictates the required behaviour for all possible occurrences; our implementation will make reasonable assumptions just as yours will, and they might be different, and that's fine.
-
-The data is reset occasionally, but you can use this link to play around and get a feel for how the application should behave.
-
-#### 6.9.2. Error raising for the frontend
+The frontend is located in a separate directory. If you run the frontend at the same time as your flask server is running on the backend, then you can power the frontend via your backend.
 
 For errors to be appropriately raised on the frontend, they must be raised by the following:
 
@@ -1228,7 +868,7 @@ The quality of the descriptions will not be assessed, but you must modify your e
 
 The types in error.py have been modified appropriately for you.
 
-### 6.10. User Sessions
+### 10. User Sessions
 
 Iteration 2 introduces the concept of `sessions`. With sessions, when a user logs in or registers, they receive a "token" (think of it like a ticket to a concert). These tokens are stored on the web browser, and nearly every time that user wants to make a request to the server, they will pass this "token" as part of this request. In this way, the server is able to take this token, look at it (like checking a ticket), and determine whether it's really you or not.
 
@@ -1236,13 +876,13 @@ This notion of a session is explored in the authentication (Hashing) & authorisa
 
 For iteration 2 and beyond, we also expect you to handle multiple concurrent sessions. I.E. One user can log in on two different browser tabs, click logout on tab 1, but still functionally use the website on tab 2.
 
-### 6.11. Tagging users
+### 11. Tagging users
 
 A user is tagged when a message contains the @ symbol, followed immediately by the user’s handle. The end of the handle is signified by the end of the message, or a non-alphanumeric character. If the handle is invalid, or the user is not a member of the channel or DM, no one is tagged.
 
 Tagging should also occur when messages are edited to contain tags and when the message/share optional message contains tags.
 
-### 6.12. Analytics
+### 12. Analytics
 
 Andrea and Andrew have implemented analytics pages for users and for the Streams workspace on the frontend and need data. Your task is to add to your backend functionality that keeps track of these metrics:
 
@@ -1258,7 +898,7 @@ For the Streams workspace:
   * The number of messages that exist currently
   * The workspace's utilization, which is a ratio of the number of users who have joined at least one channel/DM to the current total number of users, as defined by this pseudocode: `num_users_who_have_joined_at_least_one_channel_or_dm / num_users`
 
-As UNSW is very interested in its users' engagement, the analytics must be **time-series data**. This means every change to the above metrics (excluding `involvement_rate` and `utilization_rate`) must be timestamped, rather than just the most recent change. For users, the first data point should be 0 for all metrics at the time that their account was created. Similarly, for the workspace, the first data point should be 0 for all metrics at the time that the first user registers.
+As we are very interested in our users' engagement, the analytics must be **time-series data**. This means every change to the above metrics (excluding `involvement_rate` and `utilization_rate`) must be timestamped, rather than just the most recent change. For users, the first data point should be 0 for all metrics at the time that their account was created. Similarly, for the workspace, the first data point should be 0 for all metrics at the time that the first user registers.
 
 For users, the number of channels and DMs that they have joined can increase and decrease over time, however the number of messages sent will only increase (the removal of messages does not affect it).
 
@@ -1266,11 +906,11 @@ For the workspace, `num_msgs` is the number of messages that exist at the curren
 
 In addition to keeping track of these metrics, you are required to implement two new endpoints, `user/stats` and `users/stats`.
 
-### 6.13. Reacts
+### 13. Reacts
 
 The only React ID currently associated with the frontend is React ID 1, which is a thumbs up. You are welcome to add more (this will require some frontend work).
 
-### 6.14. Standups
+### 14. Standups
 
 Once standups are finished, all of the messages sent to standup/send are packaged together in *one single message* posted by *the user who started the standup* and sent as a message to the channel the standup was started in, timestamped at the moment the standup finished.
 
@@ -1294,144 +934,10 @@ nick: my catfish ate a kmart toaster
 
 Standups can be started on the frontend by typing "/standup X", where X is the number of seconds that the standup lasts for, into the message input and clicking send.
 
-### 6.15. profile_img_url & image uploads
+### 15. profile_img_url & image uploads
 
 For outputs with data pertaining to a user, a profile_img_url is present. When images are uploaded for a user profile, after processing them you should store them on the server such that your server now locally has a copy of the cropped image of the original file linked. Then, the profile_img_url should be a URL to the server, such as http://localhost:5001/imgurl/adfnajnerkn23k4234.jpg (a unique url you generate).
 
 For any given user, if they have yet to upload an image, there should be a site-wide default image used.
 
 Note: This is most likely the most challenging part of the project. Don't get lost in this, we would strongly recommend most teams complete this capability *last*.
-
-## 7. Due Dates and Weightings
-
-|Iteration|Due date                              |Demonstration to tutor(s)      |Assessment weighting of project (%)|
-|---------|--------------------------------------|-------------------------------|-----------------------------------|
-|   1     |10am Monday 4th October (**week 4**)    |In YOUR **week 4** laboratory  |25%                                |
-|   2     |10am Monday 25th October (**week 7**)   |In YOUR **week 7** laboratory  |40%                                |
-|   3     |10am Monday 15th November (**week 10**) |In YOUR **week 10** laboratory |35%                                |
-
-### 7.1. Submission & Late Penalties
-
-There is no late penalty, as we do not accept late submissions. You will be assessed on the most recent version of your work at the due date and time listed.
-
-To submit your work, open up a CSE terminal and run:
-
-` $ 1531 submit [iteration] [groupname]`
-
-For example:
-
-` $ 1531 submit iteration1 W11A_EAGLE`
-
-This will submit a copy of your latest git commit to our systems for automarking. Your tutor will also request you pull up this copy when marking you in the demonstration.
-
-If the deadline is approaching and you have features that are either untested or failing their tests, **DO NOT MERGE IN THOSE MERGE REQUESTS**. In some cases, your tutor will look at unmerged branches and may allocate some reduced marks for incomplete functionality, but `master` should only contain working code.
-
-### 7.2. Demonstration
-
-For the demonstrations in weeks 4, 7, and 10, all team members **must** attend this lab session, or they will not receive a mark.
-
-When you demonstrate this iteration in your lab time, it will consist of a 15 minute Q&A in front of your tutor and maybe some other students in your tutorial. For online classes, webcams are required to be on during this Q&A (your phone is a good alternative if your laptop/desktop doesn't have a webcam).
-
-## 8. Other Expectations
-
-While it is up to you as a team to decide how work is distributed between you, for the purpose of assessment there are certain key criteria all members must follow.
-
-* Code contribution
-* Documentation contribution
-* Usage of git/GitLab
-* Attendance
-* Peer assessment
-* Academic conduct
-
-The details of each of these is below.
-
-While, in general, all team members will receive the same mark (a sum of the marks for each iteration), **if you as an individual fail to meet these criteria your final project mark may be scaled down**, most likely quite significantly.
-
-### 8.1. Project check-in
-
-During your lab class, in weeks without project demonstrations, you and your team will conduct a short stand-up in the presence of your tutor. Each member of the team will briefly state what they have done in the past week, what they intend to do over the next week, and what issues they faced or are currently facing. This is so your tutor, who is acting as a representative of the client, is kept informed of your progress. They will make note of your presence and may ask you to elaborate on the work you've done.
-
-Project check-ins are also excellent opportunities for your tutor to provide you with both technical and non-technical guidance.
-
-### 8.2. Code Style and Documentation
-
-You are required to ensure that your code:
- * Follows Pythonic principles discussed in lectures and tutorials
- * Follows stylistic convenctions discussed in lectures and tutorials
- * (For iterations 2 & 3) your code should achieve a `10.00/10` `pylint` score
-
-Examples of things to focus on include:
-* Correct casing of variable, function and class names
-* Meaningful variable and function names
-* Readability of code and use of whitespace
-* Modularisation and use of helper functions where needed
-
-Your functions such as `auth_register`, `channel_invite`, `message_send`, etc. are also required to contain docstrings of the following format:
-
-```
-<Brief description of what the function does>
-
-Arguments:
-    <name> (<data type>)    - <description>
-    <name> (<data type>)    - <description>
-    ...
-
-Exceptions:
-    InputError  - Occurs when ...
-    AccessError - Occurs when ...
-
-Return Value:
-    Returns <return value> on <condition>
-    Returns <return value> on <condition>
-```
-
-In each iteration you will be assessed on ensuring that every relevant function/endpoint in the specification is appropriately documented.
-
-### 8.3. Individual Marks
-
-Whilst we do award a tentative mark to your group as a whole, your actual mark for each iteration is given to you individually. Your individual mark is determined by your tutor, with your group mark as a reference point. Your tutor will look at your code contribution, documentation contribution (for iteration 3), peer assessment results, any other issues raised by group members throughout term, and your attendance at project check-ins and demonstrations.
-
-### 8.3.1. Code contribution
-
-All team members must contribute code to the project to a generally similar degree. Tutors will assess the degree to which you have contributed by looking at your **git history** and analysing lines of code, number of commits, timing of commits, etc. If you contribute significantly less code than your team members, your work will be closely examined to determine what scaling needs to be applied.
-
-### 8.3.2. Documentation contribution
-
-All team members must contribute documentation to the project to a generally similar degree. Tutors will assess the degree to which you have contributed by looking at your **git history** but also **asking questions** (essentially interviewing you) during your demonstration.
-
-Note that, **contributing more documentation is not a substitute for not contributing code**.
-
-### 8.3.3. Peer Assessment
-
-At the end of each iteration there will be a peer assessment survey where you will rate and leave comments about each team member's contribution to the project up until that point. 
-
-Your other team members will **not** be able to see how you rated them or what comments you left in either peer assessment. If your team members give you a less than satisfactory rating, your contribution will be scrutinised and you may find your final mark scaled down.
-
-### 8.3.4. Attendance
-
-It is generally assumed that all team members will be present at the demonstrations and at weekly check-ins. If you're absent for more than 80% of the weekly check-ins or any of the demonstrations, your mark may be scaled down.
-
-If, due to exceptional circumstances, you are unable to attend your lab for a demonstration, please apply for special consideration.
-
-## 9. Automarking
-
-Each iteration consists of an automarking component. The particular formula used to calculate this mark is specific to the iteration (and detailed above).
-
-When running your code or tests as part of the automarking, we place a 2 minutes timer on the running of your groups tests and implementation. This is more than enough time to complete everything unless you're doing something very wrong or silly with your code.
-
-Once you receive your results for each iteration, your mark may be lower than expected. If you find this is due to many marks being lost due to one or two trivial, systematic bugs, you are welcome to branch off the submission commit, make some changes, and push to another branch. If you share this branch with your tutor and ask them to rerun it, they can rerun it for you. Your new automarking mark will be your new mark with a 20% penalty (of the total automark mark) for the change.
-Prior to the iterations being due, we will be running your code against the actual automarkers (the same ones that determine your final mark) and publishing the results of every group on a leaderboard. [The leaderboard will be available here once released](http://cgi.cse.unsw.edu.au/~cs1531/21T3/leaderboard). Your position and mark on the leaderboard will be referenced against an alias for your group (for privacy). By now you should know your alias.
-
-The automarker for the leaderboard will be run at 10am on Tuesday 9th, Thursday 11th, and Saturday 13th of November. This means the leaderboard will only be updated <b>3 times</b> prior to your submission.
-
-The leaderboard gives you a chance to sanity check your automark (without knowing the details of what you did right and wrong), and is just a bit of fun.
-
-## 10. Plagiarism
-
-The work you and your group submit must be your own work. Submission of work partially or completely derived from any other person or jointly written with any other person is not permitted. The penalties for such an offence may include negative marks, automatic failure of the course and possibly other academic discipline. Assignment submissions will be examined both automatically and manually for such submissions.
-
-Relevant scholarship authorities will be informed if students holding scholarships are involved in an incident of plagiarism or other misconduct.
-
-Do not provide or show your project work to any other person, except for your group and the teaching staff of COMP1531. If you knowingly provide or show your assignment work to another person for any reason, and work derived from it is submitted you may be penalized, even if the work was submitted without your knowledge or consent. This may apply even if your work is submitted by a third party unknown to you.
-
-Note, you will not be penalized if your work has the potential to be taken without your consent or knowledge.
