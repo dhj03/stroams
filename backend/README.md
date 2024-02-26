@@ -14,8 +14,6 @@ If you get an OSError stating that the address is already in use, you can change
 
 If you get any errors relating to `flask_cors`, ensure you have installed all the necessary Python libraries.
 
-Please note: For routes such as `standup/start` and `message/sendlater` you are not required to account for situations whereby the server process crashes or restarts whilst waiting. If the server ever restarts while these active "sessions" are ongoing, you can assume they are no longer happening after restart.
-
 ## Interface specifications
 
 ### 1. Input/Output types
@@ -864,17 +862,13 @@ if True: # condition here
     raise InputError(description='Description of problem')
 ```
 
-The quality of the descriptions will not be assessed, but you must modify the errors to this format.
-
-The types in error.py have been modified appropriately for you.
-
 ### 10. User Sessions
 
 When a user logs in or registers, they receive a "token" (think of it like a ticket to a concert) for a session. These tokens are stored on the web browser, and nearly every time that user wants to make a request to the server, they will pass this "token" as part of this request. In this way, the server is able to take this token, look at it (like checking a ticket), and determine whether it's really you or not.
 
 This notion of a session is explored in the authentication (Hashing) & authorisation (JWT).
 
-We also expect you to handle multiple concurrent sessions. I.E. One user can log in on two different browser tabs, click logout on tab 1, but still functionally use the website on tab 2.
+The application is also able to handle multiple concurrent sessions. I.E. One user can log in on two different browser tabs, click logout on tab 1, but still functionally use the website on tab 2.
 
 ### 11. Tagging users
 
@@ -884,7 +878,7 @@ Tagging should also occur when messages are edited to contain tags and when the 
 
 ### 12. Analytics
 
-We have implemented analytics pages for users and for the Streams workspace on the frontend and need data. Your task is to add to your backend functionality that keeps track of these metrics:
+Analytics pages for users and for the Streams workspace on the frontend need data. The backend keeps track of these metrics:
 
 For users:
   * The number of channels the user is a part of
@@ -904,7 +898,7 @@ For users, the number of channels and DMs that they have joined can increase and
 
 For the workspace, `num_msgs` is the number of messages that exist at the current time, and should decrease when messages are removed. `num_channels` will never decrease as there is no way to remove channels, and `num_dms` will only decrease when `dm/remove` is called.
 
-In addition to keeping track of these metrics, you are required to implement two new endpoints, `user/stats` and `users/stats`.
+In addition to keeping track of these metrics, there are also two other endpoints, `user/stats` and `users/stats`.
 
 ### 13. Reacts
 
