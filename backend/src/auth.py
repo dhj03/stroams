@@ -247,7 +247,7 @@ def auth_passwordreset_request_v1(email):
         u_id += 1
 
     message = """\
-    Subject: Streams Reset Code
+    Subject: Stroams Reset Code
 
     Ignore this message if you have not requested a reset
     Reset code: {}"""

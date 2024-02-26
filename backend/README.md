@@ -1,4 +1,4 @@
-# Streams Backend
+# Stroams Backend
 
 ### Running the server
 
@@ -529,7 +529,7 @@ If you get any errors relating to `flask_cors`, ensure you have installed all th
     </td>
   </tr>
   <tr>
-    <td><code>admin/user/remove/v1</code><br /><br />Given a user by their u_id, remove them from the Streams. This means they should be removed from all channels/DMs, and will not be included in the list of users returned by users/all. Streams owners can remove other Streams owners (including the original first owner). Once users are removed, the contents of the messages they sent will be replaced by 'Removed user'. Their profile must still be retrievable with user/profile, however name_first should be 'Removed' and name_last should be 'user'. The user's email and handle should be reusable.</td>
+    <td><code>admin/user/remove/v1</code><br /><br />Given a user by their u_id, remove them from the Stroams. This means they should be removed from all channels/DMs, and will not be included in the list of users returned by users/all. Stroams owners can remove other Stroams owners (including the original first owner). Once users are removed, the contents of the messages they sent will be replaced by 'Removed user'. Their profile must still be retrievable with user/profile, however name_first should be 'Removed' and name_last should be 'user'. The user's email and handle should be reusable.</td>
     <td style="color: red; font-weight: bold;">DELETE</td>
     <td><b>Parameters:</b><br /><code>{ token, u_id }</code><br /><br /><b>Return Type:</b><br /><code>{}</code></td>
     <td>
@@ -778,13 +778,13 @@ If you get any errors relating to `flask_cors`, ensure you have installed all th
     </td>
   </tr>
   <tr>
-    <td><code>user/stats/v1</code><br /><br />Fetches the required statistics about this user's use of Streams.</td>
+    <td><code>user/stats/v1</code><br /><br />Fetches the required statistics about this user's use of Stroams.</td>
     <td style="font-weight: bold; color: green;">GET</td>
     <td><b>Parameters:</b><br /><code>{ token }</code><br /><br /><b>Return Type:</b><br /><code>{ user_stats }</code></td>
     <td>N/A</td>
   </tr>
   <tr>
-    <td><code>users/stats/v1</code><br /><br />Fetches the required statistics about the use of Streams.</td>
+    <td><code>users/stats/v1</code><br /><br />Fetches the required statistics about the use of Stroams.</td>
     <td style="font-weight: bold; color: green;">GET</td>
     <td><b>Parameters:</b><br /><code>{ token }</code><br /><br /><b>Return Type:</b><br /><code>{ workspace_stats }</code></td>
     <td>N/A</td>
@@ -827,16 +827,16 @@ Pagination should also apply to messages in DMs.
  * Members in a channel/DM have one of two channel/DM permissions
    1) Owner of the channel/DM
    2) Members of the channel/DM
- * Streams users have two global permissions
+ * Stroams users have two global permissions
    1) Owners (permission id 1), who can also modify other owners' permissions
    2) Members (permission id 2), who do not have any special permissions
-* All Streams users are members by default, except for the very first user who signs up, who is an owner
+* All Stroams users are members by default, except for the very first user who signs up, who is an owner
 
 A user's primary permissions are their global permissions (except in DMs). Then the channel/DM permissions are layered on top. For example:
-* An owner of Streams has channel owner permissions in every channel they've joined. Despite obtaining owner permissions upon joining a channel, they do not become channel owners unless a channel owner adds them as one, meaning if they are removed as a global owner, they will no longer have those channel owner permissions.
-* Streams owners do not have owner permissions in DMs. The only users with owner permissions in DMs are the original creators of each DM.
-* A member of Streams is a member in channels they are not owners of
-* A member of Streams is an owner in channels they are owners of
+* An owner of Stroams has channel owner permissions in every channel they've joined. Despite obtaining owner permissions upon joining a channel, they do not become channel owners unless a channel owner adds them as one, meaning if they are removed as a global owner, they will no longer have those channel owner permissions.
+* Stroams owners do not have owner permissions in DMs. The only users with owner permissions in DMs are the original creators of each DM.
+* A member of Stroams is a member in channels they are not owners of
+* A member of Stroams is an owner in channels they are owners of
 
 
 ### 8. Token
@@ -878,7 +878,7 @@ Tagging should also occur when messages are edited to contain tags and when the 
 
 ### 12. Analytics
 
-Analytics pages for users and for the Streams workspace on the frontend need data. The backend keeps track of these metrics:
+Analytics pages for users and for the Stroams workspace on the frontend need data. The backend keeps track of these metrics:
 
 For users:
   * The number of channels the user is a part of
@@ -886,7 +886,7 @@ For users:
   * The number of messages the user has sent
   * The user's involvement, as defined by this pseudocode: `sum(num_channels_joined, num_dms_joined, num_msgs_sent)/sum(num_channels, num_dms, num_msgs)`. If the denominator is 0, involvement should be 0. If the involvement is greater than 1, it should be capped at 1.
 
-For the Streams workspace:
+For the Stroams workspace:
   * The number of channels that exist currently
   * The number of DMs that exist currently
   * The number of messages that exist currently

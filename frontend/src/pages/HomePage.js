@@ -13,7 +13,7 @@ function HomePage() {
           <Typography variant="h4">WELCOME</Typography>
           <div style={{ paddingTop: 15 }}>
             <Typography variant="body1">
-              This is Streams: agile messaging for Software Engineers
+              This is Stroams: agile messaging for Software Engineers
             </Typography>
           </div>
           <br />

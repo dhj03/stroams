@@ -1,8 +1,8 @@
-# Streams
+# Stroams
 
 ## Introduction
 
-Streams is a messaging platform application, similar to Messenger. It allows users to send DMs, create channels, invite other users to them, and post messages in them.
+Stroams is a messaging platform application, similar to Messenger. It allows users to send DMs, create channels, invite other users to them, and post messages in them.
 
 ## Running the Program
 
